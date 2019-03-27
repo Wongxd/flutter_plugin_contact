@@ -1,14 +1,36 @@
 # phone_contact
 
-A new Flutter plugin.
+Flutter plugin for get contact info.
 
-## Getting Started
+## Installation
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.io/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+First, add `phone_contact` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+### iOS
+
+Add the following keys to your _Info.plist_ file, located in `<project root>/ios/Runner/Info.plist`:
+
+- `NSContactsUsageDescription` - describe why your app needs permission for the contacts library.
+
+### Android
+
+```
+<uses-permission android:name="android.permission.READ_CALL_LOG" />
+<uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+<uses-permission android:name="android.permission.READ_CONTACTS" />
+<uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+```
+
+### Example
+
+```dart
+import 'package:phone_contact/phone_contact.dart';
+
+ var temp = PhoneContact.getContactList();
+                    temp.then((it) {
+                      if (it is ContactListBean) {
+                        setState(() {
+                          contactStr = jsonEncode(it);
+                        });
+                      }
+```
