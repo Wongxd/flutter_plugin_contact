@@ -6,6 +6,13 @@ Flutter plugin for get contact info.
 
 First, add `phone_contact` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
+```dependencies:
+        phone_contact:
+             git:
+              url: "https://github.com/Wongxd/flutter_plugin_contact.git"
+
+```
+
 ### iOS
 
 Add the following keys to your _Info.plist_ file, located in `<project root>/ios/Runner/Info.plist`:
@@ -34,3 +41,11 @@ import 'package:phone_contact/phone_contact.dart';
                         });
                       }
 ```
+
+####Android
+![Android](art/Android.png)
+
+<br/>
+
+####iOS
+![iOS](art/iOS.jpg)
