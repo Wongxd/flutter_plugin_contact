@@ -62,7 +62,7 @@ class ContactBean {
   int contact_id;
   String contact_name;
   String lookup_key;
-  List<String> telephoneNumbers;
+  List<String> telephoneNumbers = [];
   String sort_key_primary;
   String location;
   String tagIndex;
@@ -72,7 +72,7 @@ class ContactBean {
       {this.contact_id = 0,
       this.contact_name = "",
       this.lookup_key = "",
-      this.telephoneNumbers = List(),
+      this.telephoneNumbers,
       this.sort_key_primary = "",
       this.location = ""});
 
